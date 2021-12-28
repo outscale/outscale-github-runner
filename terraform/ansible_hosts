@@ -1,0 +1,2 @@
+[runner]
+runner ansible_connection=ssh ansible_ssh_common_args="-F ssh_config"

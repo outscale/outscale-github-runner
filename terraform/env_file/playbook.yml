@@ -1,0 +1,19 @@
+---
+# playbook.yml
+- name: 'Configure Instance'
+  hosts: runner
+  become: true
+
+  tasks:
+    - name: Copy service file
+      template:
+        src: ephemeral-github-actions-runner.env.j2
+        dest: /etc/ephemeral-github-actions-runner.env
+    - name: Make sure a service unit is running
+      systemd:
+        enabled: yes 
+        state: restarted
+        daemon_reload: yes
+        name: github-runners.service
+        
+
