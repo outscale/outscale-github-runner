@@ -8,14 +8,9 @@ packer {
 }
 
 
-variable "omi_name" {
-  type    = string
-  default = "${env("OMI_NAME")}"
-}
-
 variable "omi" {
   type    = string
-  default = "${env("SOURCE_OMI")}"
+  default = "ami-504e6b16"
 }
 
 variable "region" {
