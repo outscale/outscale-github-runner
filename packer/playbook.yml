@@ -1,0 +1,26 @@
+---
+# playbook.yml
+- name: 'Provision Image'
+  hosts: default
+  become: true
+
+  tasks:
+    - name: Installing required packages
+      apt:
+        pkg: 
+          - docker.io
+        update_cache: yes
+    - name: Copy service file
+      copy:
+        src: etc/systemd/system/github-runners.service
+        dest: /etc/systemd/system/github-runners.service
+        owner: root
+        group: root
+        mode: '0644'
+    - name: Make sure a service unit is running
+      systemd:
+        enabled: yes 
+        daemon_reload: yes
+        name: github-runners.service
+        
+
