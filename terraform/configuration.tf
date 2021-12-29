@@ -13,5 +13,5 @@ resource "shell_script" "configure_runner" {
     EOF
     delete = "ANSIBLE_CONFIG=ansible.cfg ansible-playbook env_file/playbook-destroy.yml"
   }
-  depends_on = [outscale_vm.my_vm]
+  depends_on = [outscale_vm.my_vm, local_file.ssh_config]
 }

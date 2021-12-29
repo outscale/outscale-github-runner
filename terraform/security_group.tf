@@ -9,6 +9,6 @@ resource "outscale_security_group_rule" "my_sg_rule" {
     from_port_range = "22"
     to_port_range   = "22"
     ip_protocol     = "tcp"
-    ip_ranges       = var.allowed_cidr
+    ip_ranges       = ["0.0.0.0/0"]
   }
 }
