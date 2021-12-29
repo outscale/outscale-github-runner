@@ -49,4 +49,9 @@ build {
     playbook_file = "./playbook.yml"
   }
 
+  post-processor "manifest" {
+    output    = "manifest.json"
+    strip_path = true
+  }
+
 }
