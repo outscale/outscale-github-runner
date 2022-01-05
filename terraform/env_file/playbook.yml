@@ -7,7 +7,7 @@
   tasks:
     - name: Copy service file
       template:
-        src: ephemeral-github-actions-runner.env.j2
+        src: ephemeral-github-actions-runner-{{runner_scope}}.env.j2
         dest: /etc/ephemeral-github-actions-runner.env
     - name: Make sure a service unit is running
       systemd:
