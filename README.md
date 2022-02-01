@@ -4,27 +4,14 @@
 ## TODO
 - [ ] 
 
-## Install
-- Need `packer` and `terraform`
+## Requirements
+- [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli): >=1.1.0
+- [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html): >=2.11.7
 
-## Run
-In order to create the OMI, you will need some environment variable
-
-| Env | Default | Description
-| --- | --- | ---
-| `OUTSCALE_ACCESSKEYID` | None | **required** Outscale Access Key (see [here](https://docs.outscale.com/en/userguide/Getting-Information-About-Your-Access-Keys.html))
-| `OUTSCALE_SECRETKEYID` | None | **required** Outscale Secret Key (see [here](https://docs.outscale.com/en/userguide/Getting-Information-About-Your-Access-Keys.html))
-| `OUTSCALE_REGION` | eu-west-2 | Outscale Region
-
-Then, just run this command
-```bash
-make packer
-```
-
-### Terraform
+## Deploy
 First, you also need to provide variables for the runner configuration in a file in `terraform` folder named `terraform.tfvars`
-```
-github_access_token=<TOKEN>
+```hcl
+github_access_token="<TOKEN>"
 runner_scope="org|repo"
 runner_repo_url="<GITHUB_URL>"
 ```
@@ -34,6 +21,10 @@ Then, just run this command
 make terraform
 ```
 
+## Uninstall
+```bash
+make terraform-destroy
+```
 ## License
 
 > Copyright Outscale SAS

@@ -5,6 +5,18 @@
   become: true
 
   tasks:
+    - name: Installing required packages
+      apt:
+        pkg: 
+          - docker.io
+        update_cache: yes
+    - name: Copy service file
+      copy:
+        src: etc/systemd/system/github-runners.service
+        dest: /etc/systemd/system/github-runners.service
+        owner: root
+        group: root
+        mode: '0644'
     - name: Copy service file
       template:
         src: ephemeral-github-actions-runner-{{runner_scope}}.env.j2
