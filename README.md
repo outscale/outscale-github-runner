@@ -16,6 +16,8 @@ runner_scope="org|repo"
 runner_repo_url="<GITHUB_URL>"
 ```
 
+> The `TOKEN` can be generated in  `Settings` > `Developer settings` > `Personal access tokens`. (See [Docs](https://github.com/myoung34/docker-github-actions-runner#create-github-personal-access-token) for more information)
+
 Then, just run this command
 ```bash
 make terraform
