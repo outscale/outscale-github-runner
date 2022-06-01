@@ -8,7 +8,7 @@ TimeoutStartSec=0
 Restart=always
 ExecStartPre=-/usr/bin/docker stop %n
 ExecStartPre=-/usr/bin/docker rm %n
-ExecStartPre=-/usr/bin/docker pull myoung34/github-runner:latest
+ExecStartPre=-/usr/bin/docker pull myoung34/github-runner:2.292.0-ubuntu-bionic
 ExecStart=/usr/bin/docker run \
                             --rm \
                             --network host \
@@ -16,7 +16,7 @@ ExecStart=/usr/bin/docker run \
                             -v /var/run/docker.sock:/var/run/docker.sock \
                             -v /tmp/runner:/tmp/runner \
                             --name %n \
-                            myoung34/github-runner:latest /ephemeral-runner.sh
+                            myoung34/github-runner:2.292.0-ubuntu-bionic
 
 [Install]
 WantedBy=multi-user.target
