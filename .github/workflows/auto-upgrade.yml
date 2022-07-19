@@ -1,0 +1,17 @@
+name: Auto Upgrade Docker image
+
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+    
+
+jobs:
+  auto-upgrade:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check and upgrade
+        run: .github/scripts/check_latest_version.sh
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
