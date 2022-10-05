@@ -9,14 +9,19 @@
 - [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html): >=2.11.7
 
 ## Deploy
-First, you also need to provide variables for the runner configuration in a file in `terraform` folder named `terraform.tfvars`
-```hcl
-github_access_token="<TOKEN>"
-runner_scope="org|repo"
-runner_repo_url="<GITHUB_URL>"
+### Runner for a single repository
+```
+cp terraform/terraform.tfvars.repo.example terraform/terraform.tfvars
 ```
 
-> The `TOKEN` can be generated in  `Settings` > `Developer settings` > `Personal access tokens`. (See [Docs](https://github.com/myoung34/docker-github-actions-runner#create-github-personal-access-token) for more information)
+### Runner for an organisation
+```
+cp terraform/terraform.tfvars.org.example terraform/terraform.tfvars
+````
+
+Then replace the following variables:
+- `github_access_token`: The `TOKEN` can be generated in  `Settings` > `Developer settings` > `Personal access tokens`. (See [Docs](https://github.com/myoung34/docker-github-actions-runner#create-github-personal-access-token) for more information)
+- `runner_repo_url`
 
 Then, just run this command
 ```bash
