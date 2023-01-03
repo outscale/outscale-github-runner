@@ -32,6 +32,11 @@ make terraform
 ```bash
 make terraform-destroy
 ```
+
+## Contributing
+
+Feel free to open an issue to ask question or suggest improvments.
+
 ## License
 
 > Copyright Outscale SAS
