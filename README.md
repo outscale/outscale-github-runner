@@ -1,9 +1,6 @@
 # Outscale Self-Hosted Github Runner 
-
-
-## TODO
-- [ ] 
-
+[![Project Graduated](https://docs.outscale.com/fr/userguide/_images/Project-Graduated-green.svg)](https://docs.outscale.com/en/userguide/Open-Source-Projects.html)
+ 
 ## Requirements
 - [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli): >=1.1.0
 - [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html): >=2.11.7
