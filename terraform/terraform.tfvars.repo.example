@@ -1,9 +1,9 @@
 # Uncomment if you do not use environment variables
 #access_key_id=<OSC_ACCESS_KEY>
 #secret_key_id=<OSC_SECRET_KEY>
-#region=<OSC_REGION>
 
 github_access_token="<TOKEN>"
 runner_scope="repo"
 runner_repo_url="<REPO_URL>"
-image_id="ami-504e6b16" # available on eu-west-2 (ami-5acc478e for us-east-2)
+labels="<LABELS>"
+runner_name_prefix="<RUNNER_NAME_PREFIX>"
