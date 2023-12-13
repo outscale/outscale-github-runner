@@ -4,7 +4,7 @@ set -e
 
 root=$(cd "$(dirname $0)/../.." && pwd)
 
-current_version=$(grep "myoung34/github-runner" terraform/env_file/etc/systemd/system/github-runners.service | head -1 | sed -r "s|.*myoung34/github-runner:(.*)-ubuntu-bionic$|\1|")
+current_version=$(grep "myoung34/github-runner" terraform/env_file/etc/systemd/system/github-runners.service | head -1 | sed -r "s|.*myoung34/github-runner:(.*)-ubuntu-jammy$|\1|")
 latest_version=$(git ls-remote --refs --sort="version:refname" --tags https://github.com/myoung34/docker-github-actions-runner| cut -d/ -f3- | tail -n1;)
 
 if [ ! -z ${latest_version} ] && [ ${current_version} != ${latest_version} ]; then

@@ -1,6 +1,6 @@
 resource "outscale_vm" "my_vm" {
   image_id                 = var.image_id
-  vm_type                  = "tinav4.c4r16p2"
+  vm_type                  = var.vm_type
   keypair_name             = outscale_keypair.my_keypair.keypair_name
   security_group_ids       = [outscale_security_group.my_sg.security_group_id]
   placement_subregion_name = "${var.region}a"
@@ -24,5 +24,4 @@ resource "outscale_vm" "my_vm" {
     key   = "name"
     value = "self-hosted runner for Github"
   }
-
 }

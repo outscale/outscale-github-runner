@@ -1,10 +1,11 @@
 terraform {
   required_providers {
     outscale = {
-      source  = "outscale-dev/outscale"
+      source  = "outscale/outscale"
+      version = ">= 0.10.0"
     }
     shell = {
-      source  = "scottwinkler/shell"
+      source = "scottwinkler/shell"
     }
   }
 }
