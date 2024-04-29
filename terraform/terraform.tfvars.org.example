@@ -7,3 +7,6 @@ runner_scope="org"
 runner_repo_url="<ORG_URL>"
 labels="<LABELS>"
 runner_name_prefix="<RUNNER_NAME_PREFIX>"
+
+# uncomment if you don't want 100GB of disk size
+# volume_size=200

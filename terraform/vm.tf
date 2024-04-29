@@ -10,7 +10,7 @@ resource "outscale_vm" "my_vm" {
   block_device_mappings {
     device_name = "/dev/sda1"
     bsu {
-      volume_size           = "100"
+      volume_size           = var.volume_size
       volume_type           = "gp2"
       delete_on_vm_deletion = "true"
     }

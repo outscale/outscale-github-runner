@@ -12,6 +12,11 @@ variable "image_id" {
   default = "ami-bb490c7e"  # available on eu-west-2 (ami-5acc478e for us-east-2)
 }
 
+variable "volume_size" {
+  type    = number
+  default = 100
+}
+
 variable "vm_type" {
   type    = string
   default = "tinav4.c4r16p2"
